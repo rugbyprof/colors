@@ -12,7 +12,7 @@ type PixelInfo struct {
 	R, G, B uint8
 }
 
-func getPixelInfo(filePath string) ([]PixelInfo, error) {
+func GetImagePixels(filePath string) ([]PixelInfo, error) {
 	var pixelArray []PixelInfo
 
 	reader, err := os.Open(filePath)
@@ -47,7 +47,7 @@ func getPixelInfo(filePath string) ([]PixelInfo, error) {
 }
 
 func main() {
-	pixels, err := getPixelInfo("colors.png")
+	pixels, err := GetImagePixels("colors.png")
 	if err != nil {
 		fmt.Println("Error:", err)
 		return
