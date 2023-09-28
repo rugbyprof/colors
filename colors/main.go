@@ -17,13 +17,13 @@ func GetImagePixels(filePath string) ([]PixelInfo, error) {
 
 	reader, err := os.Open(filePath)
 	if err != nil {
-		return nil, fmt.Errorf("Error: %v", err)
+		return nil, fmt.Errorf("error: %v", err)
 	}
 	defer reader.Close()
 
 	img, _, err := image.Decode(reader)
 	if err != nil {
-		return nil, fmt.Errorf("Error: %v", err)
+		return nil, fmt.Errorf("error: %v", err)
 	}
 
 	bounds := img.Bounds()
